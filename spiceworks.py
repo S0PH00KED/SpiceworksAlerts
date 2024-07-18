@@ -11,14 +11,14 @@ from twilio.rest import Client
 
 def twilioinit():
     
-    account_sid = 'ACf876cf856fe176bb7b88cbe9de12d58c'
-    auth_token = '20d043c96bea27cba233b4bb44373e04'
+    account_sid = 'your_sid_here'
+    auth_token = 'your_token_here'
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
-    from_='+18556703139',
+    from_='your_twilio_number',
     body='Alert: A new ticket with a number higher than the original input has been detected. https://on.spiceworks.com/tickets/open/1?sort=id-desc',
-    to='+16158157432'
+    to='your_recipient_number'
     )
     print(message.sid)
 
@@ -34,7 +34,7 @@ def get_credentials_from_user():
     time.sleep(0.2)
     return password
 
-username = 'david.ewing@thistlefarms.org'
+username = 'spiceworks_email'
 
 # Generate key
 key = Fernet.generate_key()
